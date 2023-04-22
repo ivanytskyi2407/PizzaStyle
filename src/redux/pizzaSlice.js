@@ -4,13 +4,16 @@ const pizzaSlice = createSlice({
   name: 'pizzas',
   initialState: {
     pizzas,
+    cart: [],
   },
   reducers: {
-    addPizza(state, action) {
-      state.pizza.push(action.payload);
+    addToCart(state, action) {
+      console.log(state);
+      console.log(action);
+      state.cart.push(action.payload);
     },
-    removePizza(state, action) {},
+    removeFromCart(state, action) {},
   },
 });
-export const { addPizza, removePizza } = pizzaSlice.actions;
+export const { addToCart, removeFromCart } = pizzaSlice.actions;
 export default pizzaSlice.reducer;

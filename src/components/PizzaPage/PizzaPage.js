@@ -3,7 +3,7 @@ import PizzaCard from './PizzaCard/PizzaCard';
 import { useSelector } from 'react-redux';
 
 export default function Pizzas() {
-  const pizzas = useSelector((state) => state.pizzas);
+  const pizzas = useSelector((state) => state.pizzaStyle.pizzas);
   return (
     <PizzaList>
       <PizzaCard pizzas={pizzas} />
