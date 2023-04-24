@@ -3,7 +3,8 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 export default function AppBar() {
-  const cartSum = useSelector((state) => state.pizzaStyle.cart);
+  const cart = useSelector((state) => state.pizzaStyle.cart);
+  const cartSum = cart.reduce((acc, curr) => acc + curr.quantity, 0);
 
   return (
     <div className="container">
@@ -19,7 +20,7 @@ export default function AppBar() {
           to="/cart"
           className={({ isActive }) => (isActive ? s.activeLink : s.link)}
         >
-          {cartSum.length}
+          {cartSum ? cartSum : null}
           Cart
         </NavLink>
       </header>
