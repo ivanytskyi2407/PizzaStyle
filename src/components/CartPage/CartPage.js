@@ -4,6 +4,7 @@ import CartCard from './CartCard/CartCard';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { makeAnOrder } from '../../redux/pizzaSlice';
+import { Container } from '@mui/material';
 
 export default function CartPage() {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export default function CartPage() {
   );
 
   return (
-    <>
+    <Container>
       {cart.length === 0 ? (
         <h2>
           Please, choose pizza <Link to="/">here</Link>
@@ -28,6 +29,6 @@ export default function CartPage() {
           <button onClick={() => dispatch(makeAnOrder())}>Make an order</button>
         </>
       )}
-    </>
+    </Container>
   );
 }
