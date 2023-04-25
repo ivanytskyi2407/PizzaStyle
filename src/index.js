@@ -11,7 +11,7 @@ root.render(
     {/* <BrowserRouter basename="pizzaStyle">
      */}
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="PizzaStyle">
         <App />
       </BrowserRouter>
     </Provider>
