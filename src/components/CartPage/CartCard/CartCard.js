@@ -1,17 +1,44 @@
-import s from './CartCard.module.css';
 import CartCounter from '../../CartCounter/CartCounter';
-function CartCart({ cart }) {
+import { useSelector } from 'react-redux';
+import {
+  Card,
+  CardMedia,
+  Grid,
+  CardContent,
+  Typography,
+  CardActions,
+} from '@mui/material';
+function CartCart() {
+  const cart = useSelector((state) => state.pizzaStyle.cart);
+
   return cart.map(({ id, title, description, price, image, quantity }) => {
     return (
-      <li key={id} className={s.card}>
-        <img src={image} alt={title} />
-        <div className={s.card__information}>
-          <h3 className={s.card__name}>{title}</h3>
-          <p>{description}</p>
-          <CartCounter id={id} />
-          <span>{price * quantity}UAH</span>
-        </div>
-      </li>
+      <Grid item xs={2} sm={4} md={4} key={id}>
+        <Card
+          sx={{
+            height: '100%',
+          }}
+        >
+          <CardMedia
+            image={image}
+            alt={title}
+            title={title}
+            sx={{
+              height: 350,
+            }}
+          />
+          <CardContent sx={{ height: 100 }}>
+            <Typography variant="h6" component="h3">
+              {title}
+            </Typography>
+            <Typography variant="body2">{description}</Typography>
+            <Typography variant="body1">{price * quantity}UAH</Typography>
+          </CardContent>
+          <CardActions>
+            <CartCounter id={id} />
+          </CardActions>
+        </Card>
+      </Grid>
     );
   });
 }

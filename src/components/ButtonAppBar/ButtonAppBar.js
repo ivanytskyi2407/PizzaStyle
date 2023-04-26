@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { AppBar, Badge, Toolbar, Typography } from '@mui/material';
 import { NavLink, Outlet } from 'react-router-dom';
 import { LocalPizza, ShoppingCart } from '@mui/icons-material';
+import Footer from '../Footer/Footer';
 
 export default function ButtonAppBar() {
   const cart = useSelector((state) => state.pizzaStyle.cart);
@@ -11,51 +12,38 @@ export default function ButtonAppBar() {
   return (
     <>
       <AppBar position="static" sx={{ mb: 5 }}>
-        <Toolbar>
-          <Typography variant="h6" body1="span" sx={{ flexGrow: 1 }}>
-            <NavLink
-              className={({ isActive }) => (isActive ? s.activeLink : s.link)}
-              exact="true"
-              to="/"
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <NavLink
+            className={({ isActive }) => (isActive ? s.activeLink : s.link)}
+            exact="true"
+            to="/"
+          >
+            <Typography
+              variant="h6"
+              body1="span"
+              sx={{
+                color: 'primary.contrastText',
+              }}
             >
               <LocalPizza />
               Pizza
-            </NavLink>
-          </Typography>
-          <Typography>
-            <NavLink
-              className={({ isActive }) => (isActive ? s.activeLink : s.link)}
-              to="/cart"
-            >
+            </Typography>
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) => (isActive ? s.activeLink : s.link)}
+            to="/cart"
+          >
+            <Typography>
               <Badge color="secondary" badgeContent={cartSum}>
                 <ShoppingCart />
               </Badge>
-            </NavLink>
-          </Typography>
+            </Typography>
+          </NavLink>
         </Toolbar>
       </AppBar>
       <Outlet />
+      <Footer />
     </>
   );
 }
-//  <div className="container">
-//    <header className={s.header}>
-//      <NavLink
-//        exact="true"
-//        to="/"
-//        className={({ isActive }) => (isActive ? s.activeLink : s.link)}
-//      >
-//        Pizza
-//      </NavLink>
-//      <NavLink
-//        to="/cart"
-//        className={({ isActive }) => (isActive ? s.activeLink : s.link)}
-//      >
-//        {cartSum ? cartSum : null}
-//        Cart
-//      </NavLink>
-//    </header>
-//    <main>
-//      <Outlet />
-//    </main>
-//  </div>;

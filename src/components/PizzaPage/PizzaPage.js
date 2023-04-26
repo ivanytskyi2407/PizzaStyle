@@ -8,6 +8,7 @@ export default function Pizzas() {
     <Container>
       <Grid
         container
+        sx={{ mb: 2 }}
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
