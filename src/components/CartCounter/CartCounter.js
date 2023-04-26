@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, remove, removeFromCart } from '../../redux/pizzaSlice';
+import { Button } from '@mui/material';
 
 function CartCounter({ id }) {
   const dispatch = useDispatch();
@@ -26,14 +27,14 @@ function CartCounter({ id }) {
     <div>
       {count.quantity > 0 ? (
         <>
-          <button onClick={handleDecrement}>-</button>
+          <Button onClick={handleDecrement}>-</Button>
           <span>{count.quantity}</span>
-          <button onClick={handleIncrement}>+</button>
+          <Button onClick={handleIncrement}>+</Button>
         </>
       ) : (
-        <button onClick={handleIncrement}>Add to Cart</button>
+        <Button onClick={handleIncrement}>Add to Cart</Button>
       )}
-      {count.quantity >= 1 && <button onClick={handleRemove}>Remove</button>}
+      {count.quantity >= 1 && <Button onClick={handleRemove}>Remove</Button>}
     </div>
   );
 }

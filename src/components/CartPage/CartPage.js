@@ -1,33 +1,30 @@
 import { useSelector } from 'react-redux';
-import CartList from './CartList/CartList';
 import CartCard from './CartCard/CartCard';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { makeAnOrder } from '../../redux/pizzaSlice';
+import { Container, Grid, Typography } from '@mui/material';
+import MakeAnOrder from '../MakeAnOrder/MakeAnOrder';
 
 export default function CartPage() {
-  const dispatch = useDispatch();
   const cart = useSelector((state) => state.pizzaStyle.cart);
-  const totalSum = cart.reduce(
-    (acc, curr) => acc + curr.price * curr.quantity,
-    0
-  );
 
   return (
-    <>
+    <Container>
       {cart.length === 0 ? (
-        <h2>
+        <Typography variant="h3" align="center">
           Please, choose pizza <Link to="/">here</Link>
-        </h2>
+        </Typography>
       ) : (
         <>
-          <CartList>
-            <CartCard cart={cart} />
-          </CartList>
-          <h3>Total: {totalSum} UAH</h3>
-          <button onClick={() => dispatch(makeAnOrder())}>Make an order</button>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+          >
+            <CartCard />
+          </Grid>
+          <MakeAnOrder />
         </>
       )}
-    </>
+    </Container>
   );
 }
