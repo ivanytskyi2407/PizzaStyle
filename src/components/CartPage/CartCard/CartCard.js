@@ -17,6 +17,7 @@ function CartCart() {
         <Card
           sx={{
             height: '100%',
+            '&:hover': { boxShadow: '0px 10px 13px -7px #000000' },
           }}
         >
           <CardMedia
@@ -25,6 +26,7 @@ function CartCart() {
             title={title}
             sx={{
               height: 350,
+              '&:hover': { transform: 'scale(1.05)' },
             }}
           />
           <CardContent sx={{ height: 100 }}>

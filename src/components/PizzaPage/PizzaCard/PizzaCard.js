@@ -16,13 +16,19 @@ export default function PizzaCard({ pizzas }) {
 
     return (
       <Grid item xs={2} sm={4} md={4} key={id}>
-        <Card sx={{ height: '100%' }}>
+        <Card
+          sx={{
+            height: '100%',
+            '&:hover': { boxShadow: '0px 10px 13px -7px #000000' },
+          }}
+        >
           <CardMedia
             image={image}
             alt={title}
             title={title}
             sx={{
               height: 350,
+              '&:hover': { transform: 'scale(1.05)' },
             }}
           />
           <CardContent sx={{ height: 100 }}>
