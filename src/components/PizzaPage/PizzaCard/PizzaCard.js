@@ -15,7 +15,7 @@ export default function PizzaCard({ pizzas }) {
     const isInCart = cart.some((item) => item.id === id);
 
     return (
-      <Grid item xs={2} sm={4} md={4} key={id}>
+      <Grid item xs={12} sm={6} md={4} key={id}>
         <Card
           sx={{
             height: '100%',
