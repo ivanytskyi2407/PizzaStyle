@@ -5,7 +5,7 @@ import Pizzas from './components/PizzaPage/PizzaPage';
 import CartPage from './components/CartPage/CartPage';
 import Page404 from './components/Page404/Page404';
 
-function App() {
+export default function App() {
   return (
     <Routes>
       <Route path="/" element={<ButtonAppBar />}>
@@ -16,5 +16,3 @@ function App() {
     </Routes>
   );
 }
-
-export default App;

@@ -9,6 +9,7 @@ import {
   Typography,
   CardActions,
 } from '@mui/material';
+
 export default function PizzaCard({ pizzas }) {
   const cart = useSelector((state) => state.pizzaStyle.cart);
   return pizzas.map(({ id, title, description, price, image }) => {

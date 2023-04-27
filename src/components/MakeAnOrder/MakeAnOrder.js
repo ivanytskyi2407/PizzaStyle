@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function MakeAnOrder() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.pizzaStyle.cart);
-
   const totalSum = cart.reduce(
     (acc, curr) => acc + curr.price * curr.quantity,
     0

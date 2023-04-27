@@ -11,7 +11,7 @@ export default function ButtonAppBar() {
 
   return (
     <>
-      <AppBar position="static" sx={{ mb: 5 }}>
+      <AppBar>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <NavLink
             className={({ isActive }) => (isActive ? s.activeLink : s.link)}

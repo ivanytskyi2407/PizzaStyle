@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
 
-export const Footer = () => {
+export default function Footer() {
   return (
     <Box
       sx={{
@@ -27,6 +27,4 @@ export const Footer = () => {
       </Container>
     </Box>
   );
-};
-
-export default Footer;
+}

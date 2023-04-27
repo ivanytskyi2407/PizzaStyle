@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, remove, removeFromCart } from '../../redux/pizzaSlice';
 import { Button } from '@mui/material';
 
-function CartCounter({ id }) {
+export default function CartCounter({ id }) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.pizzaStyle.cart);
   const count = cart.find((item) => item.id === id);
@@ -38,5 +38,3 @@ function CartCounter({ id }) {
     </div>
   );
 }
-
-export default CartCounter;

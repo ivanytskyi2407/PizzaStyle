@@ -8,7 +8,7 @@ import {
   Typography,
   CardActions,
 } from '@mui/material';
-function CartCart() {
+export default function CartCart() {
   const cart = useSelector((state) => state.pizzaStyle.cart);
 
   return cart.map(({ id, title, description, price, image, quantity }) => {
@@ -44,5 +44,3 @@ function CartCart() {
     );
   });
 }
-
-export default CartCart;

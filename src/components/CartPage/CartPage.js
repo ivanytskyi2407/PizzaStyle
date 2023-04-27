@@ -8,7 +8,7 @@ export default function CartPage() {
   const cart = useSelector((state) => state.pizzaStyle.cart);
 
   return (
-    <Container>
+    <Container sx={{ mt: 10 }}>
       {cart.length === 0 ? (
         <Typography variant="h3" align="center">
           Please, choose pizza <Link to="/">here</Link>

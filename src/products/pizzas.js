@@ -76,7 +76,7 @@ export const pizzas = [
       'A pizza topped with spinach, feta cheese, and mozzarella cheese.',
     price: 139,
     image:
-      'https://panda-pizza.com.ua/cache/dish/img/dishes/pizza/funjini.jpg?130223',
+      'https://panda-pizza.com.ua/cache/dish/img/dishes/pizza/pollo.jpg?130223',
   },
   {
     id: 10,
