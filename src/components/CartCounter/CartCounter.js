@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, remove, removeFromCart } from '../../redux/pizzaSlice';
 import { Button } from '@mui/material';
+import { addToCart, remove, removeFromCart } from '../../redux/pizzaSlice';
 
 export default function CartCounter({ id }) {
   const dispatch = useDispatch();
@@ -27,9 +28,13 @@ export default function CartCounter({ id }) {
     <div>
       {count.quantity > 0 ? (
         <>
-          <Button onClick={handleDecrement}>-</Button>
+          <Button aria-label="decrement" onClick={handleDecrement}>
+            -
+          </Button>
           <span>{count.quantity}</span>
-          <Button onClick={handleIncrement}>+</Button>
+          <Button aria-label="increment" onClick={handleIncrement}>
+            +
+          </Button>
         </>
       ) : (
         <Button onClick={handleIncrement}>Add to Cart</Button>
@@ -38,3 +43,4 @@ export default function CartCounter({ id }) {
     </div>
   );
 }
+CartCounter.propTypes = { id: PropTypes.number.isRequired };

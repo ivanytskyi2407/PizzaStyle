@@ -1,4 +1,4 @@
-import CartCounter from '../../CartCounter/CartCounter';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import {
   Card,
@@ -8,6 +8,8 @@ import {
   Typography,
   CardActions,
 } from '@mui/material';
+import CartCounter from '../CartCounter/CartCounter';
+
 export default function CartCart() {
   const cart = useSelector((state) => state.pizzaStyle.cart);
 
@@ -23,6 +25,7 @@ export default function CartCart() {
           <CardMedia
             image={image}
             alt={title}
+            loading="lazy"
             title={title}
             sx={{
               height: 350,
@@ -44,3 +47,12 @@ export default function CartCart() {
     );
   });
 }
+
+CartCart.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
+};

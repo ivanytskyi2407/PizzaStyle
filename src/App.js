@@ -1,8 +1,7 @@
-import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import ButtonAppBar from './components/ButtonAppBar/ButtonAppBar';
-import Pizzas from './components/PizzaPage/PizzaPage';
-import CartPage from './components/CartPage/CartPage';
+import Pizzas from './pages/PizzaPage';
+import CartPage from './pages/CartPage';
 import Page404 from './components/Page404/Page404';
 
 export default function App() {
