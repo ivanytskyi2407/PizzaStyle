@@ -9,6 +9,7 @@ import {
   CardActions,
 } from '@mui/material';
 import CartCounter from '../CartCounter/CartCounter';
+import s from './CartCard.module.css';
 
 export default function CartCart() {
   const cart = useSelector((state) => state.pizzaStyle.cart);
@@ -16,21 +17,13 @@ export default function CartCart() {
   return cart.map(({ id, title, description, price, image, quantity }) => {
     return (
       <Grid item xs={12} sm={6} md={4} key={id}>
-        <Card
-          sx={{
-            height: '100%',
-            '&:hover': { boxShadow: '0px 10px 13px -7px #000000' },
-          }}
-        >
+        <Card className={s.cart}>
           <CardMedia
             image={image}
             alt={title}
             loading="lazy"
             title={title}
-            sx={{
-              height: 350,
-              '&:hover': { transform: 'scale(1.05)' },
-            }}
+            className={s.img}
           />
           <CardContent sx={{ height: 100 }}>
             <Typography variant="h6" component="h3">

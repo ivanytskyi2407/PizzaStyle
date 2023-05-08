@@ -18,7 +18,6 @@ export default function Pizzas() {
             xs: 24,
           },
           mb: 3,
-          mt: 3,
         }}
       >
         Pizza for today
